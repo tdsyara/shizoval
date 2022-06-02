@@ -62,3 +62,4 @@ Free open-source game cheat for Tanki Online.
 * `E`- down position for AirBreak
 * `J` - toggle Anti-Aim
 * `R` - explode the missiles (if the missiles are stuck and nothing happens)
+* `INSERT` - toggle visible cheat menu
