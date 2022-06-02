@@ -3,7 +3,7 @@ Free open-source game cheat for Tanki Online.
 
 ## Features
 *   **AirBreak** - air walk
-*   **clicker** - auto use FAK/supplies/mines
+*   **Clicker** - auto use FAK/supplies/mines
 *   **FPS Up** - removal of all mines
 *   **Striker Hack** - one hit kill/infinite aiming/no laser
 *   **WallHack** - render glow effect on entities
