@@ -33,57 +33,57 @@ function reset()
 }
 
 // Main event (call after initialization)
-(() =>
+function mainEvent()
 {
-    console.clear();
-    console.log("[SHIZOVAL] The cheat has been loaded");
-
-    setInterval(() =>
+    try
     {
-        try
+        if (!init && Utils.isGameReady())
         {
-            if (!init && Utils.isGameReady())
-            {
-                init = true;
+            init = true;
     
-                // init code
-                document.getElementById("infoWindow").style.display = "none";
-                document.getElementById("gameStates").style.display = "";
+            // init code
+            document.getElementById("infoWindow").style.display = "none";
+            document.getElementById("gameStates").style.display = "";
 
-                let localPlayer = GameObjects.getLocalPlayer();
+            let localPlayer = GameObjects.getLocalPlayer();
                 
-                Striker.init(localPlayer);
+            Striker.init(localPlayer);
 
-                localPlayer.at(0).entity.unpossess = function () 
-                {
-                    this.isPossessed = !1;
-                    reset();
-                }
-            }
-            else if (init && !Utils.isGameReady())
+            localPlayer.at(0).entity.unpossess = function () 
             {
+                this.isPossessed = !1;
                 reset();
             }
-    
-            if (init)
-            {
-                let localPlayer = GameObjects.getLocalPlayer();
-
-                // process functions
-                AirBreak.process(localPlayer);
-                Clicker.process(localPlayer);
-                Striker.process(localPlayer);
-                RemoveMines.process(localPlayer);
-                WallHack.process(localPlayer);
-
-                CheatMenu.setStates();
-            }
-        }   
-        catch (e)
+        }
+        else if (init && !Utils.isGameReady())
         {
-            Utils.errorLog(e);
             reset();
         }
-    });
+    
+        if (init)
+        {
+            let localPlayer = GameObjects.getLocalPlayer();
 
-})();
+            // process functions
+            AirBreak.process(localPlayer);
+            Clicker.process(localPlayer);
+            Striker.process(localPlayer);
+            RemoveMines.process(localPlayer);
+            WallHack.process(localPlayer);
+
+            CheatMenu.setStates();
+        }
+    }   
+    catch (e)
+    {
+        Utils.errorLog(e);
+        reset();
+    }
+
+    requestAnimationFrame(mainEvent);
+}
+
+requestAnimationFrame(mainEvent);
+
+console.clear();
+console.log("[SHIZOVAL] The cheat has been loaded");

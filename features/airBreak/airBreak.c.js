@@ -96,8 +96,8 @@ AirBreak.process = function (localPlayer)
     {
         let position = 
         {
-            x: airBreak.position.x + airBreak.speed / 10 * Math.sin(-direction),
-            y: airBreak.position.y + airBreak.speed / 10 * Math.cos(-direction),
+            x: airBreak.position.x + airBreak.speed * Math.sin(-direction),
+            y: airBreak.position.y + airBreak.speed * Math.cos(-direction),
             z: 0
         };
 
@@ -115,8 +115,8 @@ AirBreak.process = function (localPlayer)
     {
         let position = 
         {
-            x: airBreak.position.x - airBreak.speed / 10 * Math.sin(-direction),
-            y: airBreak.position.y - airBreak.speed / 10 * Math.cos(-direction),
+            x: airBreak.position.x - airBreak.speed * Math.sin(-direction),
+            y: airBreak.position.y - airBreak.speed * Math.cos(-direction),
             z: 0
         };
 
@@ -134,8 +134,8 @@ AirBreak.process = function (localPlayer)
     {
         let position = 
         {
-            x: airBreak.position.x - airBreak.speed / 10 * Math.sin(-(direction - Math.PI / 2)),
-            y: airBreak.position.y - airBreak.speed / 10 * Math.cos(-(direction - Math.PI / 2)),
+            x: airBreak.position.x - airBreak.speed * Math.sin(-(direction - Math.PI / 2)),
+            y: airBreak.position.y - airBreak.speed * Math.cos(-(direction - Math.PI / 2)),
             z: 0
         };
 
@@ -153,8 +153,8 @@ AirBreak.process = function (localPlayer)
     {
         let position = 
         {
-            x: airBreak.position.x + airBreak.speed / 10 * Math.sin(-(direction - Math.PI / 2)),
-            y: airBreak.position.y + airBreak.speed / 10 * Math.cos(-(direction - Math.PI / 2)),
+            x: airBreak.position.x + airBreak.speed * Math.sin(-(direction - Math.PI / 2)),
+            y: airBreak.position.y + airBreak.speed * Math.cos(-(direction - Math.PI / 2)),
             z: 0
         };
 
@@ -170,12 +170,12 @@ AirBreak.process = function (localPlayer)
 
     if (KeyPressing.isKeyPressed(81 /*key: Q*/) && Utils.isNotOpenChat())
     {
-        airBreak.position.z += airBreak.speed / 10;
+        airBreak.position.z += airBreak.speed;
     }
 
     if (KeyPressing.isKeyPressed(69 /*key: E*/) && Utils.isNotOpenChat())
     {
-        airBreak.position.z -= airBreak.speed / 10;
+        airBreak.position.z -= airBreak.speed;
     }
 
     if (KeyPressing.isKeyPressed(37 /*key: LEFT*/) && Utils.isNotOpenChat())
