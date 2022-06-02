@@ -16,7 +16,7 @@ Free open-source game cheat for Tanki Online.
 ```js
 // ==UserScript==
 // @name         shizoval
-// @version      0.1
+// @version      0.2
 // @description  Free open-source game cheat for Tanki Online.
 // @author       sheezzmee
 // @match        https://*.tankionline.com/*
@@ -62,3 +62,5 @@ Free open-source game cheat for Tanki Online.
 * `E`- down position for AirBreak
 * `J` - toggle Anti-Aim
 * `R` - explode the missiles (if the missiles are stuck and nothing happens)
+* `INSERT` - toggle visible cheat menu
+* `5` - toggle auto mining

@@ -67,4 +67,16 @@ CheatMenu.setStates = function ()
         airBreakObj.antiAimState.label.textContent = "FALSE";
         airBreakObj.antiAimState.color.color = "red";
     }
+
+    if (clickerObj.autoMining.label.textContent == "FALSE" && autoMining == true)
+    {
+        clickerObj.autoMining.label.textContent = "TRUE";
+        clickerObj.autoMining.color.color = "green";
+    }
+
+    if (clickerObj.autoMining.label.textContent == "TRUE" && autoMining == false)
+    {
+        clickerObj.autoMining.label.textContent = "FALSE";
+        clickerObj.autoMining.color.color = "red";
+    }
 }

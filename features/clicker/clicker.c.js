@@ -1,5 +1,15 @@
 // clicker.c.js
 
+let autoMining = false
+
+document.addEventListener('keyup', (e) => 
+{
+    if (e.keyCode == 53 && Utils.isGameReady() && Utils.isNotOpenChat())
+    {
+        autoMining = !autoMining;
+    }
+})
+
 Clicker.process = function (localPlayer)
 {
     if (!localPlayer)
@@ -50,4 +60,10 @@ Clicker.process = function (localPlayer)
 
     gameActions.at(8).at(1).wasPressed = true;
     gameActions.at(8).at(1).wasReleased = true;
+
+    if (autoMining)
+    {
+        gameActions.at(9).at(1).wasPressed = true;
+        gameActions.at(9).at(1).wasReleased = true;
+    }
 }
