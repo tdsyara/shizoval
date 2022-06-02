@@ -63,4 +63,3 @@ Free open-source game cheat for Tanki Online.
 * `J` - toggle Anti-Aim
 * `R` - explode the missiles (if the missiles are stuck and nothing happens)
 * `INSERT` - toggle visible cheat menu
-* `5` - toggle auto mining
