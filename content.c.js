@@ -53,6 +53,12 @@ function reset()
                 let localPlayer = GameObjects.getLocalPlayer();
                 
                 Striker.init(localPlayer);
+
+                localPlayer.at(0).entity.unpossess = function () 
+                {
+                    this.isPossessed = !1;
+                    reset();
+                }
             }
             else if (init && !Utils.isGameReady())
             {

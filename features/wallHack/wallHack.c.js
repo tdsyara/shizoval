@@ -52,17 +52,22 @@ WallHack.process = function (localPlayer)
 
     for (let i = 0; i < bodies.length; i++)
     {
-        if ((localPlayer.at(0).team.name != bodies.at(i).data.components_0.array.at(0).team.name) ||
-        localPlayer.at(0).team.name == "NONE")
+        if (bodies.at(i).data.components_0.array.at(0).hasOwnProperty("team_1h5i78$_0") &&
+        bodies.at(i).data.components_0.array.at(0).team_1h5i78$_0.hasOwnProperty("name$"))
         {
-            let color = colorEnemy;
-
-            if (bodies.at(i).data.components_0.array.at(4).userId == targetId)
+            if ((localPlayer.at(0).team_1h5i78$_0.name$ != 
+            bodies.at(i).data.components_0.array.at(0).team_1h5i78$_0.name$) ||
+            localPlayer.at(0).team_1h5i78$_0.name$ == "NONE")
             {
-                color = colorTarget;
+                let color = colorEnemy;
+    
+                if (bodies.at(i).data.components_0.array.at(4).userId == targetId)
+                {
+                    color = colorTarget;
+                }
+    
+                drawEsp(bodies.at(i).data.components_0.array, color);
             }
-
-            drawEsp(bodies.at(i).data.components_0.array, color);
         }
     }
 }
