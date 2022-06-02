@@ -16,7 +16,7 @@ Free open-source game cheat for Tanki Online.
 ```js
 // ==UserScript==
 // @name         shizoval
-// @version      0.2
+// @version      0.3
 // @description  Free open-source game cheat for Tanki Online.
 // @author       sheezzmee
 // @match        https://*.tankionline.com/*
