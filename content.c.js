@@ -5,6 +5,33 @@ let init = false;
 
 CheatMenu.init();
 
+function reset()
+{
+    init = false;
+    airBreak.state = false;
+
+    document.getElementById("infoWindow").style.display = "";
+    document.getElementById("gameStates").style.display = "none";
+
+    gameObjects = 
+    {
+        localPlayer: null,
+        world: null,
+        gameActions: null,
+        mines: null,
+        physicsComponent: null,
+        healthComponent: null,
+        camera: null,
+        strikerComponent: null
+    };
+
+    utilsObjects = 
+    {
+        rootElement: null,
+        rootObject: null
+    };
+}
+
 // Main event (call after initialization)
 (() =>
 {
@@ -19,8 +46,6 @@ CheatMenu.init();
             {
                 init = true;
     
-                console.log("[SHIZOVAL] Battle is loaded");
-
                 // init code
                 document.getElementById("infoWindow").style.display = "none";
                 document.getElementById("gameStates").style.display = "";
@@ -31,15 +56,7 @@ CheatMenu.init();
             }
             else if (init && !Utils.isGameReady())
             {
-                init = false;
-    
-                console.log("[SHIZOVAL] Battle is unloaded");
-
-                // cleanup code
-                airBreak.state = false;
-
-                document.getElementById("infoWindow").style.display = "";
-                document.getElementById("gameStates").style.display = "none";
+                reset();
             }
     
             if (init)
@@ -59,6 +76,7 @@ CheatMenu.init();
         catch (e)
         {
             Utils.errorLog(e);
+            reset();
         }
     });
 

@@ -3,16 +3,28 @@
 class GameObjects
 {
     // World
-    getWorld                = null; // args: 1 - localPlayer
-    getGameActions          = null; // args: 1 - world
-    getMines                = null; // args: 1 - world
+    getWorld                = null; // args: void
+    getGameActions          = null; // args: void
+    getMines                = null; // args: void
 
     // Tank
     getLocalPlayer          = null; // args: void
-    getPhysicsComponent     = null; // args: 1 - localPlayer
-    getHealthComponent      = null; // args: 1 - localPlayer
-    getCamera               = null; // args: 1 - localPlayer
+    getPhysicsComponent     = null; // args: void
+    getHealthComponent      = null; // args: void
+    getCamera               = null; // args: void
 
     // Weapon
-    getStrikerComponent     = null; // args: 1 - localPlayer
+    getStrikerComponent     = null; // args: void
+}
+
+gameObjects = 
+{
+    localPlayer: null,
+    world: null,
+    gameActions: null,
+    mines: null,
+    physicsComponent: null,
+    healthComponent: null,
+    camera: null,
+    strikerComponent: null
 }

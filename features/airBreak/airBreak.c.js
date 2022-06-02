@@ -20,31 +20,27 @@ AirBreak.process = function (localPlayer)
 {
     if (!localPlayer)
     {
-        Utils.errorLog("AirBreak.process: localPlayer == null");
         return;
     }
 
-    let world = GameObjects.getWorld(localPlayer);
+    let world = GameObjects.getWorld();
 
     if (!world)
     {
-        Utils.errorLog("AirBreak.process: world == null");
         return;
     }
 
-    let physicsComponent = GameObjects.getPhysicsComponent(localPlayer);
+    let physicsComponent = GameObjects.getPhysicsComponent();
 
     if (!physicsComponent)
     {
-        Utils.errorLog("AirBreak.process: physicsComponent == null");
         return;
     }
 
-    let camera = GameObjects.getCamera(localPlayer);
+    let camera = GameObjects.getCamera();
 
     if (!camera)
     {
-        Utils.errorLog("AirBreak.process: camera == null");
         return;
     }
 
@@ -52,7 +48,6 @@ AirBreak.process = function (localPlayer)
 
     if (!bodies)
     {
-        Utils.errorLog("AirBreak.process: bodies == null");
         return;
     }
 

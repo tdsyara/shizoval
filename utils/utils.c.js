@@ -2,15 +2,28 @@
 
 Utils.getRootElement = function ()
 {
-    return document.getElementById("root")._reactRootContainer;
+    if (utilsObjects.rootElement)
+    {
+        return utilsObjects.rootElement;
+    }
+
+    return utilsObjects.rootElement = document.getElementById("root")._reactRootContainer;
 }
 
 Utils.getRootObject = function ()
 {
-    if (!this.getRootElement().hasOwnProperty("_internalRoot"))
-        return null;
+    if (utilsObjects.rootObject)
+    {
+        return utilsObjects.rootObject;
+    }
 
-    return this.getRootElement()._internalRoot.current.memoizedState.element.type.prototype;
+    if (!this.getRootElement().hasOwnProperty("_internalRoot"))
+    {
+        return null;
+    }
+
+    return utilsObjects.rootObject = this.getRootElement()._internalRoot.current.memoizedState.
+        element.type.prototype;
 }
 
 Utils.getRenderElement = function ()
@@ -40,6 +53,11 @@ Utils.isParkourMode = function ()
 
 Utils.isNotKillZone = function (world, position)
 {
+    if (!this.isParkourMode())
+    {
+        return true;
+    }
+
     if (!world)
         return false;
 

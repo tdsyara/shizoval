@@ -4,31 +4,27 @@ Clicker.process = function (localPlayer)
 {
     if (!localPlayer)
     {
-        Utils.errorLog("Clicker.process: localPlayer == null");
         return;
     }
 
-    let world = GameObjects.getWorld(localPlayer);
+    let world = GameObjects.getWorld();
 
     if (!world)
     {
-        Utils.errorLog("Clicker.process: world == null");
         return;
     }
 
-    let gameActions = GameObjects.getGameActions(world);
+    let gameActions = GameObjects.getGameActions();
 
     if (!gameActions)
     {
-        Utils.errorLog("Clicker.process: gameActions == null");
         return;
     }
     
-    let healthComponent = localPlayer.at(1);
+    let healthComponent = GameObjects.getHealthComponent();
 
     if (!healthComponent)
     {
-        Utils.errorLog("Clicker.process: healthComponent == null");
         return;
     }
 

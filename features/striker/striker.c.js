@@ -12,14 +12,14 @@ Striker.init = function (localPlayer)
         return;
     }
 
-    let world = GameObjects.getWorld(localPlayer);
+    let world = GameObjects.getWorld();
 
     if (!world)
     {
         return;
     }
 
-    let striker = GameObjects.getStrikerComponent(localPlayer);
+    let striker = GameObjects.getStrikerComponent();
 
     if (!striker)
     {
@@ -59,14 +59,14 @@ Striker.process = function (localPlayer)
         return;
     }
 
-    let world = GameObjects.getWorld(localPlayer);
+    let world = GameObjects.getWorld();
 
     if (!world)
     {
         return;
     }
 
-    let striker = GameObjects.getStrikerComponent(localPlayer);
+    let striker = GameObjects.getStrikerComponent();
 
     if (!striker)
     {

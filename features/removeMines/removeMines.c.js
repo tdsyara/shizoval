@@ -7,14 +7,14 @@ RemoveMines.process = function (localPlayer)
         return;
     }
 
-    let world = GameObjects.getWorld(localPlayer);
+    let world = GameObjects.getWorld();
 
     if (!world)
     {
         return;
     }
 
-    let mines = GameObjects.getMines(world);
+    let mines = GameObjects.getMines();
 
     if (!mines)
     {

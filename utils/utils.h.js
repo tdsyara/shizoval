@@ -14,3 +14,9 @@ class Utils
 
     errorLog            = null; // args: 1 - text
 }
+
+utilsObjects = 
+{
+    rootElement: null,
+    rootObject: null
+}

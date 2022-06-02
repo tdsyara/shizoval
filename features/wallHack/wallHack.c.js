@@ -38,15 +38,13 @@ WallHack.process = function (localPlayer)
 {
     if (!localPlayer)
     {
-        Utils.errorLog("WallHack.process: localPlayer == null");
         return;
     }
 
-    let world = GameObjects.getWorld(localPlayer);
+    let world = GameObjects.getWorld();
 
     if (!world)
     {
-        Utils.errorLog("WallHack.process: world == null");
         return;
     }
 
