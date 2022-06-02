@@ -10,9 +10,9 @@ Free open-source game cheat for Tanki Online.
 
 ## Getting started
 
-**1.** Install **Tampermonkey** ([here](https://www.tampermonkey.net/))
-**2.** Create new script
-**3.** Paste this code
+*   **1.** Install **Tampermonkey** ([here](https://www.tampermonkey.net/))
+*   **2.** Create new script
+*   **3.** Paste this code
 ```js
 // ==UserScript==
 // @name         shizoval
