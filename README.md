@@ -25,33 +25,19 @@ Free open-source game cheat for Tanki Online.
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 // @require      https://raw.githubusercontent.com/brunoinds/isKeyPressed/main/isKeyPressed.min.js
 
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/utils/utils.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/utils/utils.c.js
+// @grant        GM_xmlhttpRequest
 
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/gameObjects/gameObjects.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/gameObjects/gameObjects.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/airBreak/airBreak.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/airBreak/airBreak.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/clicker/clicker.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/clicker/clicker.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/removeMines/removeMines.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/removeMines/removeMines.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/striker/striker.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/striker/striker.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/wallHack/wallHack.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/features/wallHack/wallHack.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/GUI/cheatMenu.r.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/GUI/cheatMenu.h.js
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/GUI/cheatMenu.c.js
-
-// @require      https://raw.githubusercontent.com/sheezzmee/shizoval/main/content.c.js
 // ==/UserScript==
+
+GM_xmlhttpRequest({
+  method : "GET",
+  url : "https://raw.githubusercontent.com/sheezzmee/shizoval/main/shizoval.min.js",
+  nocache: true,
+  onload: (ev) =>
+  {
+    eval(ev.responseText);
+  }
+});
 ```
 
 ## Binds
