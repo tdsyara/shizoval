@@ -62,6 +62,7 @@ GameObjects.getLocalPlayer = function ()
 
     if (!rootObject)
     {
+        console.log("!rootObject");
         return null;
     }  
     
@@ -69,13 +70,16 @@ GameObjects.getLocalPlayer = function ()
 
     if (!subs)
     {
+        console.log("!subs");
         return null;
     }  
     
     for (let i = 0; i < subs.length; i++)
     {
-        if (subs.at(i).hasOwnProperty("tank") && subs.at(i).tank.tag == "LocalTank")
+        if (subs.at(i).hasOwnProperty("tank"))
+        {
             return gameObjects.localPlayer = subs.at(i).tank.components_0.array;
+        }
     }
     
     return null;

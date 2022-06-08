@@ -26,7 +26,7 @@ Striker.init = function (localPlayer)
         return;
     }
 
-    let targetingSystem = striker.targetingSystem_0.targetingSystem_0;
+    let targetingSystem = striker.targetingSystem_0.targetingSystem_vutpoz$_0;
     let targetingSectorsCalculator = targetingSystem.directionCalculator_0.targetingSectorsCalculator_0;
 
     targetingSectorsCalculator.maxElevationAngle_0 = 100000;
@@ -38,7 +38,7 @@ Striker.init = function (localPlayer)
     {
         striker.stopAiming();
         this.lockTarget_gcez93$$default(t, e);
-        targetId = e;
+        targetId = t.targetId;
         return true;
     }
 
@@ -85,12 +85,39 @@ Striker.process = function (localPlayer)
             setTimeout(() => { state = true; }, 2000);
         }
 
+        let targetPos = { x: 0, y: 0, z: 0 };
+
+        if (targetId)
+        {
+            let bodies = world.physicsScene_0.bodies_0.array_hd7ov6$_0;
+
+            for (let i = 0; i < bodies.length; i++)
+            {
+                if (bodies.at(i).data.components_0.array.at(4).userId == targetId)
+                {
+                    if (bodies.at(i).state.position)
+                    {
+                        targetPos = bodies.at(i).state.position;
+                        break;
+                    }
+                }
+            }
+        }
+
         if (state)
         {
             for (let i = 0; i < shellCache.length; i++)
             {
-                shellCache.at(i).components_0.array.at(1).maxSpeed_0 = 35000;
-                shellCache.at(i).components_0.array.at(1).minSpeed_0 = 2000;
+                shellCache.at(i).components_0.array.at(1).direction.x = 0;
+                shellCache.at(i).components_0.array.at(1).direction.y = 0;
+                shellCache.at(i).components_0.array.at(1).direction.z = 0;
+
+                if (targetPos)
+                {
+                    shellCache.at(i).components_0.array.at(1).position.x = targetPos.x;
+                    shellCache.at(i).components_0.array.at(1).position.y = targetPos.y;
+                    shellCache.at(i).components_0.array.at(1).position.z = targetPos.z;
+                }
             }
 
             if (shellCache.length == 0)
@@ -102,8 +129,9 @@ Striker.process = function (localPlayer)
         {
             for (let i = 0; i < shellCache.length; i++)
             {
-                shellCache.at(i).components_0.array.at(1).maxSpeed_0 = 0;
-                shellCache.at(i).components_0.array.at(1).minSpeed_0 = 0;
+                shellCache.at(i).components_0.array.at(1).direction.x = 0;
+                shellCache.at(i).components_0.array.at(1).direction.y = 0;
+                shellCache.at(i).components_0.array.at(1).direction.z = 0;
             }
         }
     }

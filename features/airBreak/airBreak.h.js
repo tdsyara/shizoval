@@ -10,7 +10,7 @@ const airBreak =
     isShiftPressed: false,
     antiAim: false,
     state: false,
-    speed: 200,
+    speed: 70,
     position: { x: 0, y: 0, z: 0 },
     velocity: { x: 0, y: 0, z: 0 }
 }

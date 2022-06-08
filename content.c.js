@@ -64,9 +64,14 @@ function mainEvent()
         {
             let localPlayer = GameObjects.getLocalPlayer();
 
+            if (localPlayer)
+            {
+                localPlayer.at(37).needImmediateUpdate_0 = true;
+            }
+
             // process functions
             AirBreak.process(localPlayer);
-            Clicker.process(localPlayer);
+            Clicker.process(localPlayer); 
             Striker.process(localPlayer);
             RemoveMines.process(localPlayer);
             WallHack.process(localPlayer);
