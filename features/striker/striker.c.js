@@ -27,6 +27,12 @@ Striker.init = function (localPlayer)
     }
 
     let targetingSystem = striker.targetingSystem_0.targetingSystem_vutpoz$_0;
+
+    if (!targetingSystem)
+    {
+        targetingSystem = striker.targetingSystem_0.targetingSystem_0;
+    }
+
     let targetingSectorsCalculator = targetingSystem.directionCalculator_0.targetingSectorsCalculator_0;
 
     targetingSectorsCalculator.maxElevationAngle_0 = 100000;
